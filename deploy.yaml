@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: strider-mock-service
+spec:
+  selector:
+    name: strider-mock-pod
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5001
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: strider-mock-pod
+  labels:
+    name: strider-mock-pod
+
+spec:
+  containers:
+  - name: webservice
+    image: renciorg/strider-mock
+    imagePullPolicy: "Always"
+    ports:
+    - containerPort: 5001
