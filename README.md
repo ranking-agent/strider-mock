@@ -1,3 +1,5 @@
+# ARCHIVED: This is old and unused.
+
 # strider-mock
 testing util for mocking sync and async query operations 
 
